@@ -1,4 +1,4 @@
-package com.hussein.entity;
+package com.hussein.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

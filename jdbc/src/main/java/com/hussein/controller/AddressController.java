@@ -1,6 +1,6 @@
 package com.hussein.controller;
 
-import com.hussein.entity.Address;
+import com.hussein.vo.Address;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.*;
