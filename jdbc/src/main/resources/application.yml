@@ -1,0 +1,10 @@
+logging:
+  level.com.hussein: debug
+  pattern:
+    console: "%d{yyyy/MM/dd-HH:mm:ss} [%thread] %-5level %logger- %msg%n"
+spring:
+  datasource:
+    url: jdbc:postgresql://{jdbcurl}:5432/{database}
+    driver-class-name: org.postgresql.Driver
+    username: {username}
+    password:
