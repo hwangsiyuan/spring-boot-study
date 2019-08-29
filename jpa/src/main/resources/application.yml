@@ -12,7 +12,7 @@ spring:
       ddl-auto: none
     properties.hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
   datasource:
-    url: jdbc:mysql://localhost:3306/springdatajpa?useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/springdatajpa?useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&characterEncoding=utf-8
     username: root
     password: root
     driver-class-name: com.mysql.jdbc.Driver
