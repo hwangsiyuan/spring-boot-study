@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 /**
  * <p>Title: UserController</p>
  * <p>Description: </p>
- * <p>Company: www.fenbeitong.com</p>
+ * <p>Company: www.hussein.com</p>
  *
  * @author hwangsy
  * @date 2019/8/29 10:04 AM
