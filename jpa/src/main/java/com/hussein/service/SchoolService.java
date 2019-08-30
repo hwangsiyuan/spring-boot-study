@@ -52,7 +52,7 @@ public class SchoolService {
 
     @Transactional
     public int deleteByStudentName(String studentName) {
-       return studentRepository.deleteByStudentName(studentName);
+        return studentRepository.deleteByStudentName(studentName);
     }
 
 }
