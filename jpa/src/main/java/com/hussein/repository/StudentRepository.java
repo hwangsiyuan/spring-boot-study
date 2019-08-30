@@ -33,5 +33,5 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
 
     @Modifying
     @Query("delete from Student s where s.name = ?1")
-    void deleteByStudentName(String studentName);
+    int deleteByStudentName(String studentName);
 }

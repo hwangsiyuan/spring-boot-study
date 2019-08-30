@@ -40,7 +40,7 @@ public class StudentController {
                 .age(20)
                 .address("广州")
                 .clazz(clazz1)
-                .sex('男')
+                .sex("男")
                 .build();
         Student student2 = Student
                 .builder()
@@ -48,7 +48,7 @@ public class StudentController {
                 .age(30)
                 .address("哈尔滨")
                 .clazz(clazz1)
-                .sex('男')
+                .sex("男")
                 .build();
         Student student3 = Student
                 .builder()
@@ -56,14 +56,29 @@ public class StudentController {
                 .age(47)
                 .address("西安")
                 .clazz(clazz2)
-                .sex('男')
+                .sex("男")
                 .build();
         schoolService.saveStudentAll(Arrays.asList(student1, student2, student3));
         return "保存学生对象成功";
     }
 
     @GetMapping("/getStudentsByClazzName")
-    List<Map<String,Object>> getStudentsByClazzName(String clazzName){
+    List<Map<String, Object>> getStudentsByClazzName(String clazzName) {
         return schoolService.getStudentsByClazzName(clazzName);
+    }
+
+    @GetMapping("/findNameByClazzNameAndSex")
+    public List<String> findNameByClazzNameAndSex(String clazzName, String sex) {
+        return schoolService.findNameByClazzNameAndSex(clazzName, sex);
+    }
+
+    @GetMapping("/findClazzNameByStudentName")
+    public String findClazzNameByStudentName(String studentName) {
+        return schoolService.findClazzNameByStudentName(studentName);
+    }
+
+    @GetMapping("/deleteByStudentName")
+    public String deleteByStudentName(String studentName) {
+        return "删除数据:" + schoolService.deleteByStudentName(studentName);
     }
 }

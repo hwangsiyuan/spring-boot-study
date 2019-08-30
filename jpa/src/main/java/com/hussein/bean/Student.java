@@ -36,7 +36,7 @@ public class Student implements Serializable {
     /**
      * 性别
      */
-    private Character sex;
+    private String sex;
 
     /**
      * 年龄

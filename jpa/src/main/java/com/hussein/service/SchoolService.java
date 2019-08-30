@@ -51,8 +51,8 @@ public class SchoolService {
     }
 
     @Transactional
-    public void deleteByStudentName(String studentName) {
-        studentRepository.deleteByStudentName(studentName);
+    public int deleteByStudentName(String studentName) {
+       return studentRepository.deleteByStudentName(studentName);
     }
 
 }

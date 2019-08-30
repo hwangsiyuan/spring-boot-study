@@ -16,7 +16,8 @@ CREATE TABLE `tb_clazz` (
 
 insert into `tb_clazz`(name) values('三年级1班'),('五年级2班')
 
-insert into `tb_student`(name,sex,age,address,class_id)
+insert into `tb_student`(name,sex,age,address,clazz_id)
 values ('孙悟空','男',72,'花果山',100),
        ('牛魔王','男',92,'火焰山',101),
        ('猪八戒','男',102,'高老庄',101)
+
