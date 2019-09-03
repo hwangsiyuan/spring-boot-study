@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS `springbootmybatis` DEFAULT CHARSET utf8 COLLATE utf8_general_ci;
+CREATE TABLE `tb_user` (
+  `id` int(24) NOT NULL AUTO_INCREMENT,
+  `login_name` varchar(128) DEFAULT NULL COMMENT '登录名',
+  `password` varchar(128) DEFAULT NULL COMMENT '登录密码',
+  `user_name` varchar(128) DEFAULT NULL COMMENT '用户名',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='用户';
