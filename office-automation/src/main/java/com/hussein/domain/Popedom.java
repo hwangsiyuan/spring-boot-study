@@ -1,10 +1,12 @@
 package com.hussein.domain;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Objects;
 
 /**
  * <p>Title: Popedom</p>
@@ -14,7 +16,8 @@ import java.util.Date;
  * @author hwangsy popedom
  * @date 2019/9/7 4:30 PM
  */
-@Data
+@Getter
+@Setter
 @Entity
 @Table(name = "tb_oa_popedom")
 public class Popedom implements Serializable {
@@ -57,4 +60,28 @@ public class Popedom implements Serializable {
     @Column(name = "create_time")
     @Temporal(TemporalType.TIMESTAMP)
     private Date createTime;
+
+    @Override
+    public String toString() {
+        return "Popedom{" +
+                "id=" + id +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Popedom popedom = (Popedom) o;
+        return Objects.equals(id, popedom.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 }

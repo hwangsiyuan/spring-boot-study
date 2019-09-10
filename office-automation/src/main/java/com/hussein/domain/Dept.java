@@ -1,10 +1,12 @@
 package com.hussein.domain;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Objects;
 
 /**
  * <p>Title: Dept</p>
@@ -14,7 +16,8 @@ import java.util.Date;
  * @author hwangsy
  * @date 2019/9/7 2:31 PM
  */
-@Data
+@Getter
+@Setter
 @Entity
 @Table(name = "tb_oa_dept")
 public class Dept implements Serializable {
@@ -63,4 +66,31 @@ public class Dept implements Serializable {
     @Column(name = "modify_time")
     @Temporal(TemporalType.TIMESTAMP)
     private Date modifyTime;
+
+    @Override
+    public String toString() {
+        return "Dept{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", remark='" + remark + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Dept dept = (Dept) o;
+        return Objects.equals(id, dept.id) &&
+                Objects.equals(name, dept.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name);
+    }
 }

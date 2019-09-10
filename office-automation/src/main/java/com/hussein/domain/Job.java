@@ -37,4 +37,12 @@ public class Job implements Serializable {
     @Column(name = "remark", length = 1024)
     private String remark;
 
+    @Override
+    public String toString() {
+        return "Job{" +
+                "code='" + code + '\'' +
+                ", name='" + name + '\'' +
+                ", remark='" + remark + '\'' +
+                '}';
+    }
 }

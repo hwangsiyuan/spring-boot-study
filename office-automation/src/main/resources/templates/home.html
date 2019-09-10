@@ -78,19 +78,19 @@
 <body >
 	<div class="container">
 	      <div class="row info-content">
-		 	<form id="updateSelfForm" class="form-horizontal" method="post" action="${ctx }/identity/user/updateSelf"  style="margin-top: 20px;">
+		 	<form id="updateSelfForm" class="form-horizontal" method="post" action="/identity/user/updateSelf"  style="margin-top: 20px;">
 				<!-- 隐藏用户的id,修改用 -->
-				<input type="hidden"  name="userId" value="${user_session.userId}"/>
+				<input type="hidden"  name="userId" th:value="${session.user_session.userId}"/>
 				<div class="form-group">
 					<label class="col-sm-2 control-label">登录名称</label>
 					<div class="col-sm-3">
-						<button class="btn" style="background: #11a9e2;color: #ffffff;" disabled="disabled" type="button">
-						  ${user_session.userId} <span class="badge"></span>
+						<button class="btn" style="background: #11a9e2;color: #ffffff;" disabled="disabled" type="button" th:value="${session.user_session.userId}">
+						   <span class="badge"></span>
 						</button>				
 					</div>
 					<label class="col-sm-2 control-label">用户姓名</label>
 					<div class="col-sm-3">
-						<input type="text" id="name" name="name" value="${user_session.name}"  class="form-control" placeholder="请输入您的电子邮件">
+						<input type="text" id="name" name="name" th:value="${session.user_session.name}"  class="form-control" placeholder="请输入您的电子邮件">
 					</div>
 				</div>
 				<div class="form-group">
@@ -109,7 +109,7 @@
 					<label class="col-sm-2 control-label">部门</label>
 					<div class="col-sm-3">
 						<select  class="btn btn-default" id="deptSelect" >
-							 <option >${user_session.dept.name}</option>
+							 <option th:value="${session.user_session.dept.name}"></option>
 						</select>
 					</div>
 				</div>
@@ -117,28 +117,28 @@
 					<label class="col-sm-2 control-label">职位</label>
 					<div class="col-sm-3">
 						<select class="btn btn-default" id="jobSelect" >
-								 <option>${user_session.job.name}</option>
+								 <option th:value="${session.user_session.job.name}"></option>
 						</select>	
 					</div>
 					<label class="col-sm-2 control-label">邮箱</label>
 					<div class="col-sm-3">
-						<input id="email" name="email"  type="text" value="${user_session.email}" class="form-control" placeholder="请输入您的电子邮件">
+						<input id="email" name="email"  type="text" th:value="${session.user_session.email}" class="form-control" placeholder="请输入您的电子邮件">
 					</div>
 				</div>
 					<div class="form-group">
 					<label class="col-sm-2 control-label">电话</label>
 					<div class="col-sm-3">
-						<input id="tel" name="tel" type="text" value="${user_session.tel}" class="form-control" placeholder="请输入您的电子邮件">
+						<input id="tel" name="tel" type="text" th:value="${session.user_session.telephone}" class="form-control" placeholder="请输入您的电子邮件">
 					</div>
 					<label class="col-sm-2 control-label">手机</label>
 					<div class="col-sm-3">
-						<input id="phone" name="phone" type="text" value="${user_session.phone}" class="form-control" placeholder="请输入您的电子邮件">
+						<input id="phone" name="phone" type="text" th:value="${session.user_session.telephone}" class="form-control" placeholder="请输入您的电子邮件">
 					</div>
 				</div>
 					<div class="form-group">
 					<label class="col-sm-2 control-label">问题</label>
 					<div class="col-sm-3">
-						<select name="question" class="btn btn-default"
+						<select name="question_num" class="btn btn-default"
 						  id="question" >
 							<option value="1">您的生日</option>
 							<option value="2">您的出生地</option>
@@ -147,14 +147,14 @@
 					</div>
 					<label class="col-sm-2 control-label">答案</label>
 					<div class="col-sm-3">
-						<input id="answer" name="answer"  value="${user_session.answer}" type="text" class="form-control" placeholder="请输入您的电子邮件">
+						<input id="answer" name="answer"  th:value="${session.user_session.answer}" type="text" class="form-control" placeholder="请输入您的电子邮件">
 					</div>
 				</div>	
 				
 					<div class="form-group">
 					<label class="col-sm-2 control-label">QQ号码</label>
 					<div class="col-sm-3">
-						<input id="qqNum" name="qqNum" value="${user_session.qqNum }" type="text" class="form-control" placeholder="请输入您的电子邮件">
+						<input id="qqNum" name="qqNum" th:value="${session.user_session.qqNum }" type="text" class="form-control" placeholder="请输入您的电子邮件">
 					</div>
 					
 				</div>

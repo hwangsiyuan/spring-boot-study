@@ -123,7 +123,7 @@
             <div class="pf-user-photo">
                 <img style="width: 40px;height: 40px;" src="/images/main/xlei.jpg" alt="">
             </div>
-            <h4 class="pf-user-name ellipsis">${sessionScope.user_session.name}</h4>
+            <h4 class="pf-user-name ellipsis" th:text="${session.user_session.name}"></h4>
             <i class="iconfont xiala">&#xe607;</i>
 
             <div class="pf-user-panel">
@@ -154,20 +154,19 @@
                 <span class="toggle-icon"></span>
             </h2>
             <!-- 展示系统左侧权限树  -->
-            <ul class="sider-nav" id="sider-nav">
-                <li th:each="userModule:${userPopedomModules}">
+            <ul class="sider-nav" id="sider-nav" th:each="userModule:${userPopedomModules}">
+                <li>
                     <a href="javascript:;">
                         <span class="iconfont sider-nav-icon">&#xe611;</span>
-                        <span class="sider-nav-title">${userModule.firstModule.name}</span>
+                        <span class="sider-nav-title" th:text="${userModule.firstModule.name}"></span>
                         <i class="iconfont">&#xe642;</i>
                     </a>
-                    <ul class="sider-nav-s">
-                            <li th:each="secondModule:${userModule.secondModules}">
-                                <a href="javascript:addPanel('${secondModule.code }' ,'${secondModule.url }','${secondModule.name}');">${secondModule.name}</a>
-                            </li>
+                    <ul class="sider-nav-s" th:each="secondModule:${userModule.secondModules}">
+                        <li>
+                            <a href="javascript:addPanel('${secondModule.code }' ,'${secondModule.url }','${secondModule.name}');" th:text="${secondModule.name}"></a>
+                        </li>
                     </ul>
                 </li>
-
             </ul>
         </div>
 

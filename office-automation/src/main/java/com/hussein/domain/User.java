@@ -1,11 +1,13 @@
 package com.hussein.domain;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 /**
@@ -16,7 +18,8 @@ import java.util.Set;
  * @author hwangsy
  * @date 2019/9/7 2:43 PM
  */
-@Data
+@Getter
+@Setter
 @Entity
 @Table(name = "tb_oa_user")
 public class User implements Serializable {
@@ -142,4 +145,31 @@ public class User implements Serializable {
      */
     @ManyToMany(fetch = FetchType.LAZY, targetEntity = Role.class, mappedBy = "users")
     private Set<Role> roles = new HashSet<>();
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userId='" + userId + '\'' +
+                ", name='" + name + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        User user = (User) o;
+        return Objects.equals(userId, user.userId) &&
+                Objects.equals(name, user.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(userId, name);
+    }
 }

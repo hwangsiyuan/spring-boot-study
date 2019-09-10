@@ -1,9 +1,11 @@
 package com.hussein.domain;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.Objects;
 
 /**
  * <p>Title: Module</p>
@@ -13,7 +15,8 @@ import java.util.Date;
  * @author hwangsy
  * @date 2019/9/7 3:53 PM
  */
-@Data
+@Getter
+@Setter
 @Entity
 @Table(name = "tb_oa_module")
 public class Module {
@@ -68,4 +71,32 @@ public class Module {
     @Column(name = "modify_time")
     @Temporal(TemporalType.TIMESTAMP)
     private Date modifyTime;
+
+    @Override
+    public String toString() {
+        return "Module{" +
+                "code='" + code + '\'' +
+                ", name='" + name + '\'' +
+                ", url='" + url + '\'' +
+                ", remark='" + remark + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Module module = (Module) o;
+        return Objects.equals(code, module.code) &&
+                Objects.equals(name, module.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(code, name);
+    }
 }
