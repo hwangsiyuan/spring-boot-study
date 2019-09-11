@@ -11,7 +11,7 @@ import java.util.Objects;
 /**
  * <p>Title: Dept</p>
  * <p>Description: </p>
- * <p>Company: www.fenbeitong.com</p>
+ * <p>Company: www.hussein.com</p>
  *
  * @author hwangsy
  * @date 2019/9/7 2:31 PM

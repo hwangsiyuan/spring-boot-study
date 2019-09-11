@@ -4,8 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>捷途软件--智能办公</title>
     <link th:href="@{css/base.css}" rel="stylesheet">
-    <link th:href="@{css/login.css}" rel="stylesheet">
-    <link th:href="@{resources/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{css/platform.css}" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{resources/easyUI/easyui.css}">
     <script type="text/javascript" th:src="@{resources/jquery/jquery-1.11.0.min.js}"></script>
     <script type="text/javascript" th:src="@{resources/jquery/jquery-migrate-1.2.1.min.js}"></script>
     <script type="text/javascript" th:src="@{resources/bootstrap/js/bootstrap.min.js}"></script>
@@ -42,7 +42,7 @@
                 $('#tt').tabs('add', {
                     id: id,
                     title: name,
-                    content: '<div style="width:100%;height:100%;"><iframe class="page-iframe" src="${ctx}' + url + '" frameborder="no"   border="no" height="100%" width="100%" scrolling="auto"></iframe></div>',
+                    content: '<div style="width:100%;height:100%;"><iframe class="page-iframe" src="' + url + '" frameborder="no"   border="no" height="100%" width="100%" scrolling="auto"></iframe></div>',
                     closable: true
                 });
             }
@@ -163,7 +163,7 @@
                     </a>
                     <ul class="sider-nav-s" th:each="secondModule:${userModule.secondModules}">
                         <li>
-                            <a href="javascript:addPanel('${secondModule.code }' ,'${secondModule.url }','${secondModule.name}');" th:text="${secondModule.name}"></a>
+                            <a href="javascript:addPanel('00010001' ,'/identity/user/selectUser','用户管理');" th:text="${secondModule.name}"></a>
                         </li>
                     </ul>
                 </li>
