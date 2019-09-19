@@ -26,8 +26,10 @@
         })
 
         // 写一个方法往easyUI中添加面板
-        function addPanel(id, url, name) {
-            name = name.replace(/-/g, "");
+        function addPanel(a) {
+            id = a.id;
+            url = "/xxx/111";
+            name = a.name.replace(/-/g, "");
             // 判断之前是否已经存在该面板存在就不创建新的面板
             var exist = $('#tt').tabs('exists', name);
             if (exist) {
@@ -163,7 +165,11 @@
                     </a>
                     <ul class="sider-nav-s" th:each="secondModule:${userModule.secondModules}">
                         <li>
-                            <a href="javascript:addPanel('00010001' ,'/identity/user/selectUser','用户管理');" th:text="${secondModule.name}"></a>
+                            <a th:id="${secondModule.code}"
+                               th:name="${secondModule.name}"
+                               th:text="${secondModule.name}"
+                               onclick="addPanel(this);"
+                               href="#"></a>
                         </li>
                     </ul>
                 </li>

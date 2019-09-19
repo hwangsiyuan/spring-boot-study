@@ -6,7 +6,7 @@
     <title>工作台</title>
     <!-- 导入css样式 -->
     <link th:href="@{resources/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
-    <link th:href="@{resources/bootstrap/css/style.css}" rel="stylesheet">
+    <link th:href="@{resources/bootstrap/style.css}" rel="stylesheet">
     <link th:href="@{resources/easyUI/easyui.css}" rel="stylesheet">
     <script type="text/javascript" th:src="@{resources/jquery/jquery-1.11.0.min.js}"></script>
     <script type="text/javascript" th:src="@{resources/jquery/jquery-migrate-1.2.1.min.js}"></script>
@@ -87,26 +87,21 @@
                 <label class="col-sm-2 control-label">用户姓名</label>
                 <div class="col-sm-3">
                     <input type="text" id="name" name="name" th:value="${session.user_session.name}"
-                           class="form-control" placeholder="请输入您的电子邮件">
+                           class="form-control" placeholder="请输入您的用户姓名">
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-sm-2 control-label">性别</label>
                 <div class="col-sm-3">
-                    <select class="btn btn-default">
-                        <c:if test="${user_session.sex == 1 }">
-                            <option>男</option>
-                        </c:if>
-                        <c:if test="${user_session.sex == 2 }">
-                            <option>女</option>
-                        </c:if>
-
+                    <select class="btn btn-default" name="sex">
+                        <option th:if="${session.user_session.sex eq 1}" th:selected="selected" value="1">男</option>
+                        <option th:if="${session.user_session.sex eq 2}" th:selected="selected" value="2">女</option>
                     </select>
                 </div>
                 <label class="col-sm-2 control-label">部门</label>
                 <div class="col-sm-3">
                     <select class="btn btn-default" id="deptSelect">
-                        <option th:value="${session.user_session.dept.name}"></option>
+                        <option th:text="${session.user_session.dept.name}"></option>
                     </select>
                 </div>
             </div>
@@ -114,25 +109,25 @@
                 <label class="col-sm-2 control-label">职位</label>
                 <div class="col-sm-3">
                     <select class="btn btn-default" id="jobSelect">
-                        <option th:value="${session.user_session.job.name}"></option>
+                        <option th:text="${session.user_session.job.name}"></option>
                     </select>
                 </div>
                 <label class="col-sm-2 control-label">邮箱</label>
                 <div class="col-sm-3">
                     <input id="email" name="email" type="text" th:value="${session.user_session.email}"
-                           class="form-control" placeholder="请输入您的电子邮件">
+                           class="form-control" placeholder="请输入您的邮箱">
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-2 control-label">电话</label>
-                <div class="col-sm-3">
-                    <input id="tel" name="tel" type="text" th:value="${session.user_session.telephone}"
-                           class="form-control" placeholder="请输入您的电子邮件">
-                </div>
                 <label class="col-sm-2 control-label">手机</label>
                 <div class="col-sm-3">
-                    <input id="phone" name="phone" type="text" th:value="${session.user_session.telephone}"
-                           class="form-control" placeholder="请输入您的电子邮件">
+                    <input id="phone" name="telephone" type="text" th:value="${session.user_session.telephone}"
+                           class="form-control" placeholder="请输入您的手机">
+                </div>
+                <label class="col-sm-2 control-label">QQ号码</label>
+                <div class="col-sm-3">
+                    <input id="qqNum" name="qqNum" th:value="${session.user_session.qqNum }" type="text"
+                           class="form-control" placeholder="请输入您的QQ号码">
                 </div>
             </div>
             <div class="form-group">
@@ -148,17 +143,8 @@
                 <label class="col-sm-2 control-label">答案</label>
                 <div class="col-sm-3">
                     <input id="answer" name="answer" th:value="${session.user_session.answer}" type="text"
-                           class="form-control" placeholder="请输入您的电子邮件">
+                           class="form-control" placeholder="请输入您的答案">
                 </div>
-            </div>
-
-            <div class="form-group">
-                <label class="col-sm-2 control-label">QQ号码</label>
-                <div class="col-sm-3">
-                    <input id="qqNum" name="qqNum" th:value="${session.user_session.qqNum }" type="text"
-                           class="form-control" placeholder="请输入您的电子邮件">
-                </div>
-
             </div>
             <div class="form-group">
                 <label class="col-sm-2 control-label"></label>
