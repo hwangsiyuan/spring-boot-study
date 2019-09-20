@@ -50,7 +50,7 @@
 //     	$(document).ajaxStart($.blockUI({ css: { backgroundColor: '#11a9e2', color: '#fff' } , message: '<h6>正在加载..</h6>'})).ajaxStop($.unblockUI);
             /** 异步加载部门信息  */
             $.ajax({
-                url: "${ctx}/identity/dept/getAllDeptsAndJobsAjax",
+                url: "/identity/dept/getAllDeptsAndJobsAjax",
                 type: "post",
                 dataType: "json",
                 async: true,
