@@ -4,22 +4,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>捷途软件--智能办公</title>
-    <link th:href="@{css/base.css}" rel="stylesheet">
-    <link th:href="@{css/login.css}" rel="stylesheet">
-    <link th:href="@{resources/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
-    <script type="text/javascript" th:src="@{resources/jquery/jquery-1.11.0.min.js}"></script>
-    <script type="text/javascript" th:src="@{resources/jquery/jquery-migrate-1.2.1.min.js}"></script>
-    <script type="text/javascript" th:src="@{resources/bootstrap/js/bootstrap.min.js}"></script>
-    <script type="text/javascript" th:src="@{resources/easyUI/jquery.easyui.min.js}"></script>
-    <script type="text/javascript" th:src="@{resources/easyUI/easyui-lang-zh_CN.js}"></script>
-    <link rel="stylesheet" th:href="@{resources/easyUI/easyui.css}">
+    <link th:href="@{/css/base.css}" rel="stylesheet">
+    <link th:href="@{/css/login.css}" rel="stylesheet">
+    <link th:href="@{/resources/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <script type="text/javascript" th:src="@{/resources/jquery/jquery-1.11.0.min.js}"></script>
+    <script type="text/javascript" th:src="@{/resources/jquery/jquery-migrate-1.2.1.min.js}"></script>
+    <script type="text/javascript" th:src="@{/resources/bootstrap/js/bootstrap.min.js}"></script>
+    <script type="text/javascript" th:src="@{/resources/easyUI/jquery.easyui.min.js}"></script>
+    <script type="text/javascript" th:src="@{/resources/easyUI/easyui-lang-zh_CN.js}"></script>
+    <link rel="stylesheet" th:href="@{/resources/easyUI/easyui.css}">
     <script type="text/javascript">
         $(function () {
             // 等文档加载完成以后再执行本脚本
             // 给验证码绑定点击事件
             // vimg
             $("#vimg").click(function () {
-                $(this).attr("src", "oa/createCode?timer=" + new Date().getTime());
+                $(this).attr("src", "/oa/createCode?timer=" + new Date().getTime());
             }).mouseover(function () {
                 $(this).css("cursor", "pointer");
             });
@@ -59,7 +59,7 @@
 
                 /** 发起异步请求登录 */
                 $.ajax({
-                    url: "oa/loginAjax",
+                    url: "/oa/loginAjax",
                     type: "post",
                     contentType: "application/json;charset=UTF-8",
                     dataType: "json",
@@ -145,7 +145,7 @@
                                                placeholder="验证码">
                                         <span class="input-group-addon" id="basic-addon2"><img class="check-code"
                                                                                                id="vimg" alt=""
-                                                                                               src="oa/createCode"></span>
+                                                                                               src="/oa/createCode"></span>
                                     </div>
                                 </div>
                             </div>
